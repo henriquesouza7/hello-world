@@ -47,7 +47,7 @@ function Dashboard() {
           <div className="mt-4 space-y-2">
             <QuickLink to="/financeiro" label="Abrir financeiro" icon={Wallet} />
             <QuickLink to="/internacoes" label="Consultar internações" icon={ClipboardList} />
-            <QuickLink to="/producao" label="Ver produção hospitalar" icon={FileText} />
+            <QuickLink to="/producao-hospitalar" label="Ver produção hospitalar" icon={FileText} />
             <QuickLink to="/pequenas-cirurgias" label="Agenda de pequenas cirurgias" icon={CalendarDays} />
           </div>
         </section>
