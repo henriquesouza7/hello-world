@@ -7,7 +7,7 @@ import { Route as FarmaciaRouteImport } from './routes/financeiro.farmacia'
 import { Route as LaboratorioRouteImport } from './routes/financeiro.laboratorio'
 import { Route as FeiraRouteImport } from './routes/financeiro.feira'
 import { Route as InternacoesRouteImport } from './routes/internacoes'
-import { Route as ProducaoRouteImport } from './routes/producao'
+import { Route as ProducaoHospitalarRouteImport } from './routes/producao-hospitalar'
 import { Route as PequenasCirurgiasRouteImport } from './routes/pequenas-cirurgias'
 import { Route as ConfiguracoesRouteImport } from './routes/configuracoes'
 
@@ -17,17 +17,17 @@ const FarmaciaRoute = FarmaciaRouteImport.update({ id: '/financeiro/farmacia', p
 const LaboratorioRoute = LaboratorioRouteImport.update({ id: '/financeiro/laboratorio', path: '/laboratorio', getParentRoute: () => FinanceiroRoute } as any)
 const FeiraRoute = FeiraRouteImport.update({ id: '/financeiro/feira', path: '/feira', getParentRoute: () => FinanceiroRoute } as any)
 const InternacoesRoute = InternacoesRouteImport.update({ id: '/internacoes', path: '/internacoes', getParentRoute: () => rootRouteImport } as any)
-const ProducaoRoute = ProducaoRouteImport.update({ id: '/producao', path: '/producao', getParentRoute: () => rootRouteImport } as any)
+const ProducaoHospitalarRoute = ProducaoHospitalarRouteImport.update({ id: '/producao-hospitalar', path: '/producao-hospitalar', getParentRoute: () => rootRouteImport } as any)
 const PequenasCirurgiasRoute = PequenasCirurgiasRouteImport.update({ id: '/pequenas-cirurgias', path: '/pequenas-cirurgias', getParentRoute: () => rootRouteImport } as any)
 const ConfiguracoesRoute = ConfiguracoesRouteImport.update({ id: '/configuracoes', path: '/configuracoes', getParentRoute: () => rootRouteImport } as any)
 
-export interface FileRoutesByFullPath { '/': typeof IndexRoute; '/financeiro': typeof FinanceiroRoute; '/financeiro/farmacia': typeof FarmaciaRoute; '/financeiro/laboratorio': typeof LaboratorioRoute; '/financeiro/feira': typeof FeiraRoute; '/internacoes': typeof InternacoesRoute; '/producao': typeof ProducaoRoute; '/pequenas-cirurgias': typeof PequenasCirurgiasRoute; '/configuracoes': typeof ConfiguracoesRoute }
+export interface FileRoutesByFullPath { '/': typeof IndexRoute; '/financeiro': typeof FinanceiroRoute; '/financeiro/farmacia': typeof FarmaciaRoute; '/financeiro/laboratorio': typeof LaboratorioRoute; '/financeiro/feira': typeof FeiraRoute; '/internacoes': typeof InternacoesRoute; '/producao-hospitalar': typeof ProducaoHospitalarRoute; '/pequenas-cirurgias': typeof PequenasCirurgiasRoute; '/configuracoes': typeof ConfiguracoesRoute }
 export interface FileRoutesByTo extends FileRoutesByFullPath {}
 export interface FileRoutesById extends FileRoutesByFullPath { __root__: typeof rootRouteImport }
 export interface FileRouteTypes { fileRoutesByFullPath: FileRoutesByFullPath; fullPaths: keyof FileRoutesByFullPath; fileRoutesByTo: FileRoutesByTo; to: keyof FileRoutesByTo; id: '__root__' | keyof FileRoutesByFullPath; fileRoutesById: FileRoutesById }
-export interface RootRouteChildren { IndexRoute: typeof IndexRoute; FinanceiroRoute: typeof FinanceiroRoute; InternacoesRoute: typeof InternacoesRoute; ProducaoRoute: typeof ProducaoRoute; PequenasCirurgiasRoute: typeof PequenasCirurgiasRoute; ConfiguracoesRoute: typeof ConfiguracoesRoute }
+export interface RootRouteChildren { IndexRoute: typeof IndexRoute; FinanceiroRoute: typeof FinanceiroRoute; InternacoesRoute: typeof InternacoesRoute; ProducaoHospitalarRoute: typeof ProducaoHospitalarRoute; PequenasCirurgiasRoute: typeof PequenasCirurgiasRoute; ConfiguracoesRoute: typeof ConfiguracoesRoute }
 const financeiroRouteChildren = { FarmaciaRoute, LaboratorioRoute, FeiraRoute }
-const rootRouteChildren: RootRouteChildren = { IndexRoute, FinanceiroRoute, InternacoesRoute, ProducaoRoute, PequenasCirurgiasRoute, ConfiguracoesRoute }
+const rootRouteChildren: RootRouteChildren = { IndexRoute, FinanceiroRoute, InternacoesRoute, ProducaoHospitalarRoute, PequenasCirurgiasRoute, ConfiguracoesRoute }
 
 declare module '@tanstack/react-router' {
  interface FileRoutesByPath {
@@ -37,7 +37,7 @@ declare module '@tanstack/react-router' {
   '/financeiro/laboratorio': { id: '/financeiro/laboratorio'; path: '/laboratorio'; fullPath: '/financeiro/laboratorio'; preLoaderRoute: typeof LaboratorioRouteImport; parentRoute: typeof FinanceiroRoute }
   '/financeiro/feira': { id: '/financeiro/feira'; path: '/feira'; fullPath: '/financeiro/feira'; preLoaderRoute: typeof FeiraRouteImport; parentRoute: typeof FinanceiroRoute }
   '/internacoes': { id: '/internacoes'; path: '/internacoes'; fullPath: '/internacoes'; preLoaderRoute: typeof InternacoesRouteImport; parentRoute: typeof rootRouteImport }
-  '/producao': { id: '/producao'; path: '/producao'; fullPath: '/producao'; preLoaderRoute: typeof ProducaoRouteImport; parentRoute: typeof rootRouteImport }
+  '/producao-hospitalar': { id: '/producao-hospitalar'; path: '/producao-hospitalar'; fullPath: '/producao-hospitalar'; preLoaderRoute: typeof ProducaoHospitalarRouteImport; parentRoute: typeof rootRouteImport }
   '/pequenas-cirurgias': { id: '/pequenas-cirurgias'; path: '/pequenas-cirurgias'; fullPath: '/pequenas-cirurgias'; preLoaderRoute: typeof PequenasCirurgiasRouteImport; parentRoute: typeof rootRouteImport }
   '/configuracoes': { id: '/configuracoes'; path: '/configuracoes'; fullPath: '/configuracoes'; preLoaderRoute: typeof ConfiguracoesRouteImport; parentRoute: typeof rootRouteImport }
  }
