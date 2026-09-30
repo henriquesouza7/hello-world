@@ -23,7 +23,7 @@ export function DataTable<T extends { id: string }>({
           <thead className="border-b border-slate-200 bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
             <tr>
               {columns.map((column) => (
-                <th key={column.key} className={\`px-5 py-3 font-medium \${column.align === "right" ? "text-right" : ""}\`}>
+                <th key={column.key} className={`px-5 py-3 font-medium ${column.align === "right" ? "text-right" : ""}`}>
                   {column.header}
                 </th>
               ))}
@@ -37,7 +37,7 @@ export function DataTable<T extends { id: string }>({
             ) : rows.map((row) => (
               <tr key={row.id} className="hover:bg-slate-50/70">
                 {columns.map((column) => (
-                  <td key={column.key} className={\`px-5 py-4 text-slate-700 \${column.align === "right" ? "text-right" : ""}\`}>
+                  <td key={column.key} className={`px-5 py-4 text-slate-700 ${column.align === "right" ? "text-right" : ""}`}>
                     {column.render(row)}
                   </td>
                 ))}

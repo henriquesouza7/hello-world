@@ -12,13 +12,15 @@ export function FinanceFairForm({ onSubmit, onCancel }: { onSubmit: (expense: Fa
     event.preventDefault();
     if (!total) return;
 
+    const supplier = supplierOrLocation.trim();
+    const trimmedNotes = notes.trim();
     onSubmit({
       id: `fair-${Date.now()}`,
       date,
       competence,
-      supplierOrLocation: supplierOrLocation.trim() || undefined,
       total: Number(total),
-      notes: notes.trim() || undefined,
+      ...(supplier ? { supplierOrLocation: supplier } : {}),
+      ...(trimmedNotes ? { notes: trimmedNotes } : {}),
     });
   };
 

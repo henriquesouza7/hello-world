@@ -31,13 +31,14 @@ export function FinancePurchaseForm({ area, suppliers, onSubmit, onCancel }: Pur
     const parsedDiscount = Number(discount) || 0;
     const parsedFreight = Number(freight) || 0;
     const subtotal = parsedQuantity * parsedUnitPrice;
+    const trimmedInvoiceNumber = invoiceNumber.trim();
 
     onSubmit({
       id: `demo-${Date.now()}`,
       area,
       orderDate,
       supplier,
-      invoiceNumber: invoiceNumber.trim() || undefined,
+      ...(trimmedInvoiceNumber ? { invoiceNumber: trimmedInvoiceNumber } : {}),
       status,
       discount: parsedDiscount,
       freight: parsedFreight,
