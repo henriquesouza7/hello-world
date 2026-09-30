@@ -1,24 +1,23 @@
-# Hello World
+# Sistema de Gestão Administrativa Hospitalar
 
-Oi
+Base de um sistema interno para centralizar a gestão administrativa hospitalar.
 
-This project was built with [Lovable](https://lovable.dev).
+## Fase 1
+- Dashboard administrativo
+- Navegação modular
+- Financeiro: visão geral, Farmácia, Laboratório e Feira
+- Internações Hospitalares
+- Produção Hospitalar
+- Pequenas Cirurgias
+- Configurações
+- Componentes reutilizáveis e identidade visual administrativa
 
-## Build with Lovable
+Os indicadores desta fase são demonstrativos. Não há banco de dados nem regras de negócio implementados.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/0fae5cde-add2-42db-9d65-9c53338214e4).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+## Próximas fases
+1. Modelagem PostgreSQL/Supabase
+2. Autenticação e controle de acesso
+3. Módulos financeiros
+4. Internações e produção
+5. Agenda e fila de pequenas cirurgias
+6. Relatórios e integrações SUS
