@@ -28,7 +28,7 @@ const nav = [
     ],
   },
   { label: "Internações", to: "/internacoes", icon: ClipboardList },
-  { label: "Produção Hospitalar", to: "/producao", icon: BarChart3 },
+  { label: "Produção Hospitalar", to: "/producao-hospitalar", icon: BarChart3 },
   { label: "Pequenas Cirurgias", to: "/pequenas-cirurgias", icon: Stethoscope },
   { label: "Configurações", to: "/configuracoes", icon: Settings },
 ] as const;
