@@ -2,9 +2,9 @@ import { Clock3 } from "lucide-react";
 import { AppShell } from "./app-shell";
 import { PageHeader } from "./page-header";
 
-export function ModulePage({ title, description }: { title: string; description: string }) {
-  return (
-    <AppShell>
+export function ModulePage({ title, description, withShell = true }: { title: string; description: string; withShell?: boolean }) {
+  const content = (
+    <>
       <PageHeader title={title} description={description} />
       <div className="grid gap-4 md:grid-cols-3">
         {["Visão geral", "Registros", "Indicadores"].map((label) => (
@@ -20,6 +20,7 @@ export function ModulePage({ title, description }: { title: string; description:
           </div>
         ))}
       </div>
-    </AppShell>
+    </>
   );
+  return withShell ? <AppShell>{content}</AppShell> : content;
 }
