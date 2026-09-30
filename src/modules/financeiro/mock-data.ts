@@ -1,6 +1,6 @@
 import type { FairExpense, Product, Purchase, Supplier } from "./types";
 
-export const demoSuppliers: Supplier[] = [
+export const demoSuppliers: [Supplier, Supplier, Supplier] = [
   { id: "sup-001", name: "Distribuidora Hospitalar Norte", cnpj: "00.000.000/0001-00", active: true },
   { id: "sup-002", name: "Med Supply Nordeste", cnpj: "11.111.111/0001-11", active: true },
   { id: "sup-003", name: "LaborMed Insumos", cnpj: "22.222.222/0001-22", active: true },
